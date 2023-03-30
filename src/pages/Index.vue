@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md justify-evenly bg-white">
+  <q-page class="q-pa-md justify-center bg-white">
     <lista-tarefas-component
       title="Sua lista de Tarefas"
       :tarefas="tarefas"

@@ -1,8 +1,8 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar class="bg-grey-10 text-primary">
-        <q-toolbar-title>
+      <q-toolbar class="bg-grey-9 text-primary" >
+        <q-toolbar-title class="text-center">
           Lista de Tarefas
         </q-toolbar-title>
       </q-toolbar>

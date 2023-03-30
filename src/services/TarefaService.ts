@@ -18,6 +18,13 @@ class TarefaService {
         })
     }
 
+    atualizarTarefa(id: number,tarefa: String, concluido: boolean){
+        return axios.put(`${API_URL}/tarefas/${id}`, {
+            "tarefa": tarefa,
+            "concluido": concluido
+        })
+    }
+
 
 }
 
