@@ -1,11 +1,9 @@
-export interface Todo {
+export interface Tarefas {
   id: number;
   tarefa: string;
   concluido: boolean;
 }
 
-export interface Meta {
-  totalCount: number;
-}
+
 
 

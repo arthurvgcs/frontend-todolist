@@ -1,33 +1,33 @@
 <template>
-  <q-page class="row justify-evenly bg-white">
-    <example-component
+  <q-page class="q-pa-md justify-evenly bg-white">
+    <lista-tarefas-component
       title="Sua lista de Tarefas"
-      :todos="todos"
+      :tarefas="tarefas"
       v-on:dados-atualizados="listaTarefas()"
-    ></example-component>
+    ></lista-tarefas-component>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+import { Tarefas} from 'components/models';
+import ListaTarefasComponent from 'src/components/ListaTarefasComponent.vue';
 import TarefaService from '../services/TarefaService';
 
-import { defineComponent, onUpdated, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { ExampleComponent },
+  components: { ListaTarefasComponent },
   methods: {
     listaTarefas(){
       TarefaService.listarTarefas().then(response =>{
-        this.todos = response.data;
+        this.tarefas = response.data;
       })
     }
   },
   setup() {
-    const todos = ref<Todo[]>([]);
-    return { todos };
+    const tarefas = ref<Tarefas[]>([]);
+    return { tarefas };
   },
   mounted(){
     this.listaTarefas();
@@ -35,3 +35,4 @@ export default defineComponent({
 });
 
 </script>
+
