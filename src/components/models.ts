@@ -1,9 +1,11 @@
 export interface Todo {
   id: number;
-  content: string;
+  tarefa: string;
   concluido: boolean;
 }
 
 export interface Meta {
   totalCount: number;
 }
+
+
