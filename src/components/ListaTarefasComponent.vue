@@ -12,7 +12,9 @@
         </q-card-section>
         <q-separator color="primary" inset />
         <q-card-section>
+          <q-scroll-area style="height: 420px;">
             <q-list dense bordered padding class="rounded-borders my-list q-py-xs">
+              
               <q-item v-for="tarefa in tarefas" :key="tarefa.id" @click="atualizarTarefa(tarefa.id, tarefa.tarefa, tarefa.concluido)"
                 :class="{ 'concluido': tarefa.concluido }" v-ripple clickable>
                 <q-item-section avatar>
@@ -20,7 +22,7 @@
                     color="primary" class="no-pointer-events" dark />
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label lines="1">{{ tarefa.tarefa }}</q-item-label>
+                  <q-item-label lines="1" style="max-width: 420px;">{{ tarefa.tarefa }}</q-item-label>
                 </q-item-section>
                 <q-item-section side>
                   <q-btn @click.stop="deletarTarefa(tarefa.id)" flat round dense color="negative" icon="delete" />
@@ -32,7 +34,9 @@
                   Sem tarefas
                 </div>
               </div>
+            
             </q-list>
+          </q-scroll-area>
         </q-card-section>
       
     
@@ -98,9 +102,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.my-card {
+
+.my-list{
   width: 100%;
-  max-width: 600px;
+}
+
+.my-card {
+  width: 600px;
   max-height: 620px;
 }
 
